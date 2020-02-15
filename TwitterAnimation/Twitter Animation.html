@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Twitter Animation</title>
+</head>
+
+<style>
+    #c1 {
+        position: absolute;
+        left: 40%;
+        top: 35%;
+        background-color: white;
+        width: 155px;
+        height: 155px;
+        border-radius: 50%;
+    }
+    
+    #c2 {
+        position: absolute;
+        left: 47%;
+        top: 35%;
+        background-color: white;
+        width: 155px;
+        height: 155px;
+        border-radius: 50%;
+    }
+    
+    #square {
+        position: absolute;
+        left: 43.7%;
+        top: 43.7%;
+        background-color: white;
+        width: 148px;
+        height: 148px;
+        transform: rotate(45deg);
+    }
+</style>
+
+<body>
+    <div id="c1" ondblclick="twitteranimate()" onclick="twitterunlike()"></div>
+    <div id="c2" ondblclick="twitteranimate()" onclick="twitterunlike()"></div>
+    <div id="square" ondblclick="twitteranimate()" onclick="twitterunlike()"></div>
+    <div id="randomdot0"></div>
+    <div id="randomdot1"></div>
+    <div id="randomdot2"></div>
+    <div id="randomdot3"></div>
+    <div id="randomdot4"></div>
+    <div id="randomdot5"></div>
+    <div id="randomdot6"></div>
+    <div id="randomdot7"></div>
+    <div id="randomdot8"></div>
+</body>
+<script>
+    document.getElementById("c1").style.backgroundColor = "grey";
+    document.getElementById("c2").style.backgroundColor = "grey";
+    document.getElementById("square").style.backgroundColor = "grey";
+
+    function twitteranimate() {
+        var topvals = new Array(40, 55, 33, 53, 45, 47, 43, 41);
+        var leftvals = new Array(59, 40, 37, 56, 36, 64, 26, 58);
+        document.getElementById("c1").style.backgroundColor = "red";
+        document.getElementById("c2").style.backgroundColor = "red";
+        document.getElementById("square").style.backgroundColor = "red";
+        var i = 0;
+        for (i = 0; i < 9; i++) {
+            var tagid = "randomdot";
+            tagid = tagid + i;
+            console.log(tagid);
+            document.getElementById(tagid).style.position = "absolute";
+            document.getElementById(tagid).style.borderRadius = "50%";
+            var randomsize = (Math.floor(Math.random() * 20));
+            document.getElementById(tagid).style.width = randomsize + "px";
+            document.getElementById(tagid).style.height = randomsize + "px";
+            var leftvalue = leftvals[i] + "%";
+            var topvalue = topvals[i] + "%";
+            document.getElementById(tagid).style.left = leftvalue;
+            document.getElementById(tagid).style.top = topvalue;
+            document.getElementById(tagid).style.visibility = "visible";
+        }
+        document.getElementById("randomdot0").style.backgroundColor = "red";
+        document.getElementById("randomdot1").style.backgroundColor = "yellow";
+        document.getElementById("randomdot2").style.backgroundColor = "orange";
+        document.getElementById("randomdot3").style.backgroundColor = "lightblue";
+        document.getElementById("randomdot4").style.backgroundColor = "blue";
+        document.getElementById("randomdot5").style.backgroundColor = "pink";
+        document.getElementById("randomdot6").style.backgroundColor = "gold";
+        document.getElementById("randomdot7").style.backgroundColor = "lightgreen";
+        document.getElementById("randomdot8").style.backgroundColor = "silver";
+        document.getElementById("randomdot0").style.transition = "1000ms";
+        document.getElementById("randomdot1").style.transition = "1000ms";
+        document.getElementById("randomdot2").style.transition = "1000ms";
+        document.getElementById("randomdot3").style.transition = "1000ms";
+        document.getElementById("randomdot4").style.transition = "1000ms";
+        document.getElementById("randomdot5").style.transition = "1000ms";
+        document.getElementById("randomdot6").style.transition = "1000ms";
+        document.getElementById("randomdot7").style.transition = "1000ms";
+        document.getElementById("randomdot8").style.transition = "1000ms";
+        var x = window.setTimeout("disappear()", 1500);
+    }
+
+    function twitterunlike() {
+        document.getElementById("c1").style.backgroundColor = "grey";
+        document.getElementById("c2").style.backgroundColor = "grey";
+        document.getElementById("square").style.backgroundColor = "grey";
+    }
+
+    function disappear() {
+        document.getElementById("randomdot0").style.visibility = "hidden";
+        document.getElementById("randomdot1").style.visibility = "hidden";
+        document.getElementById("randomdot2").style.visibility = "hidden";
+        document.getElementById("randomdot3").style.visibility = "hidden";
+        document.getElementById("randomdot4").style.visibility = "hidden";
+        document.getElementById("randomdot5").style.visibility = "hidden";
+        document.getElementById("randomdot6").style.visibility = "hidden";
+        document.getElementById("randomdot7").style.visibility = "hidden";
+        document.getElementById("randomdot8").style.visibility = "hidden";
+    }
+</script>
+
+</html>

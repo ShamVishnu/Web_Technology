@@ -1,0 +1,204 @@
+-----------------------------------------------------------------------------
+15IT653 Web Technology
+Ex No 6 : Document Object Model and Hackerrank Javascript
+Ex Date : 31/01/20
+Roll No : 17BIT049
+Entry Date : 31/01/20
+Entry Mark : 9
+Output Date : 31/01/20
+Output Mark : 
+Record Date : 
+Record Mark :
+-----------------------------------------------------------------------------
+Hackerrank Javascript :
+Day 0 Datatypes :
+function performOperation(secondInteger, secondDecimal, secondString) {
+    const firstInteger = 4;
+    const firstDecimal = 4.0;
+    const firstString = 'HackerRank ';
+    console.log(firstInteger + parseInt(secondInteger));
+    console.log(firstDecimal + parseFloat(secondDecimal));
+    console.log(firstString + secondString);
+}
+
+Day 2 Switch :
+function getLetter(s) {
+    let letter;
+    // Write your code here
+    switch (true) {
+        case 'aeiou'.includes(s[0]):
+            letter = 'A';
+            break;
+        case 'bcdfg'.includes(s[0]):
+            letter = 'B';
+            break;
+        case 'hjklm'.includes(s[0]):
+            letter = 'C';
+            break;
+        case 'npqrstvwxyz'.includes(s[0]):
+            letter = 'D';
+            break;
+    }
+    return letter;
+}
+
+Day 3 Arrays :
+function getSecondLargest(nums) {
+    // Complete the function
+    let first = 0,
+        second = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > first) {
+            second = first;
+            first = nums[i]
+        }
+        if (nums[i] > second && nums[i] < first) {
+            second = nums[i];
+        }
+    }
+    return second;
+}
+
+Day 3 Throw :
+function isPositive(a) {
+    if (a > 0) { return "YES" };
+    throw Error(a ? "Negative Error" : "Zero Error");
+}
+
+Day 4 Rectangle :
+function Rectangle(a, b) {
+    var rectangle = {
+        length: a,
+        width: b,
+        area: a * b,
+        perimeter: 2 * (a + b)
+    };
+    return rectangle;
+}
+
+Day 4 Count Objects :
+function getCount(objects) {
+    var count = 0;
+    for (let i in objects) {
+        if (objects[i].x == objects[i].y) {
+            count++;
+        }
+    }
+    return count;
+}
+
+Day 6 Bitwise Operators :
+function getMaxLessThanK(n, k) {
+    let max_anb = 0;
+    for (let b = n; b > 0; b--) {
+        for (let a = b - 1; a > 0; a--) {
+            if ((a & b) < k && (a & b) > max_anb) {
+                max_anb = (a & b);
+            }
+        }
+    }
+    return max_anb;
+}
+
+Day 7 Regular Expression II :
+function regexVar() {
+    let re = new RegExp('^(Mr|Mrs|Ms|Dr|Er)(\\.)([a-zA-Z])*$');
+    return re;
+}
+
+Day 7 Regular Expression III:
+function regexVar() {
+    return new RegExp('\\d+', 'g');
+}
+
+Add and Delete Rows using DOM :
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dynamic Table</title>
+</head>
+<body>
+    <h1>Add / Delete Table Rows Dynamically</h1>
+    <button id="add" onclick="addTableRow()">Add</button>
+    <button id="delete" onclick="deleteTableRow()">Delete</button>
+</body>
+<script>
+    document.get
+    var table = document.createElement("table");
+    var body = document.getElementsByTagName("body")[0];
+    var row, cell, prevrow;
+    body.appendChild(table);
+    document.getElementsByTagName("table")[0].setAttribute("border", 1);
+    var count = -1;
+    function addTableRow() {
+        count = count + 1;
+        row = document.createElement("tr");
+        table.appendChild(row);
+        row.innerHTML = "Row : " + count;
+        cell = document.createElement("td");
+        row.appendChild(cell);
+        var data = window.prompt("Enter the Data for New Cell :");
+        cell.innerHTML = data;
+        console.log("Row Inserted at last");
+    }
+    function deleteTableRow() {
+        if (count < 0) {
+            window.alert("No Rows to delete");
+            console.log("No Rows available to be Deleted");
+        } else {
+            table.deleteRow(Number(count));
+            count = count - 1;
+            console.log("Row Deleted");
+        }
+    }
+</script>
+</html>
+
+Window Functions :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Window Functions</title>
+</head>
+<body>
+    <h1>Window Functions</h1>
+    <p>1 >> New Tab</p>
+    <p>2 >> Resize Tab</p>
+    <p>3 >> Pop Up Window</p>
+    <p>4 >> Move Tab</p>
+    <p>5 >> Close Window</p>
+    <button onclick="Tryit()">Wanna have a try???</button>
+</body>
+<script>
+    function Tryit() {
+        var choice = window.prompt("Enter the Choice:");
+        switch (choice) {
+            case "1":
+                window.open("./Dynamic Table.html");
+                break;
+            case "2":
+                window.resizeBy(2, 2);
+                break;
+            case "3":
+                var popup = window.open("./Dynamic Table.html", "popup", "width=500,height=500");
+                popup.moveBy(10, 10);
+                popup.resizeBy(2, 2);
+                popup.focus();
+                break;
+            case "4":
+                window.moveBy(10, 10);
+                break;
+            case "5":
+                window.close();
+                break;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Dots</title>
+</head>
+
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+
+<body>
+    <div id="Dot0"></div>
+    <div id="Dot1"></div>
+    <div id="Dot2"></div>
+    <div id="Dot3"></div>
+    <div id="Dot4"></div>
+    <div id="Dot5"></div>
+    <div id="Dot6"></div>
+    <div id="Dot7"></div>
+    <div id="Dot8"></div>
+    <div id="Dot9"></div>
+    <div id="Dot10"></div>
+    <div id="Dot11"></div>
+    <div id="Dot12"></div>
+    <div id="Dot13"></div>
+    <div id="Dot14"></div>
+    <div id="Dot15"></div>
+    <div id="Dot16"></div>
+    <div id="Dot17"></div>
+    <div id="Dot18"></div>
+    <div id="Dot19"></div>
+    <div id="Dot20"></div>
+    <div id="Dot21"></div>
+</body>
+
+<script>
+    function Randomize() {
+        var tagid = 'Dot';
+        var idcreated = (Math.floor(Math.random() * 22));
+        tagid = tagid + idcreated;
+        var leftval = (Math.floor(Math.random() * 1000)) + "px";
+        var topval = (Math.floor(Math.random() * 400)) + "px";
+        document.getElementById(tagid).style.position = 'relative';
+        document.getElementById(tagid).style.left = leftval;
+        document.getElementById(tagid).style.top = topval;
+        document.getElementById(tagid).style.borderRadius = '50%';
+        document.getElementById(tagid).style.transition = '500ms';
+        var color;
+        var r = (Math.floor(Math.random() * 255) + 1);
+        var g = (Math.floor(Math.random() * 255));
+        var b = (Math.floor(Math.random() * 255));
+        color = '#' + r + g + b;
+        var height = (Math.floor(Math.random() * 100));
+        height = height + 'px';
+        document.getElementById(tagid).style.width = height;
+        document.getElementById(tagid).style.height = height;
+        document.getElementById(tagid).style.backgroundColor = color;
+    }
+
+    var Timer = window.setInterval("Randomize()", 500);
+</script>
+
+
+</html>

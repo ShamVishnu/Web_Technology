@@ -1,0 +1,251 @@
+-----------------------------------------------------------------------------
+15IT653 Web Technology
+Ex No 7 : Servlets
+Ex Date : 07/02/20
+Roll No : 17BIT049
+Entry Date : 07/02/20
+Entry Mark : 9
+Output Date : 07/02/20
+Output Mark : 
+Record Date : 
+Record Mark :
+-----------------------------------------------------------------------------
+Form Display Servlet
+Forms.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Forms</title>
+    <h1 style="text-align: center;">Google Forms</h1>
+</head>
+
+<style>
+    fieldset {
+        border-color: black;
+        font-family: sans-serif
+    }
+    
+    body {
+        background-color: black;
+        text-align: left;
+        color: white;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    #Form {
+        display: inline-block;
+        width: 75%;
+        border-radius: 5px;
+        text-align: justify;
+        background-color: skyblue;
+        color: black;
+    }
+    
+    .cc {
+        width: 30px;
+    }
+    
+    .redstar {
+        color: red;
+    }
+    
+    #header {
+        text-align: center;
+    }
+    
+    #submitbutton {
+        padding: 20px;
+        width: 50%;
+        background-color: green;
+    }
+    
+    #submitbutton:hover {
+        background-color: darkgreen;
+    }
+    
+    #resetbutton {
+        padding: 20px;
+        width: 50%;
+        background-color: red;
+    }
+    
+    #resetbutton:hover {
+        background-color: darkred;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <h1>Enter your Personal Details</h1>
+        <p>Please fill out all the fields marked with <span class="redstar">*</span></p>
+    </div>
+    <div class="container">
+        <div id="Form">
+            <form action="FormDisplayServlet" method="post">
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    Name : <input type="text" name="Name" placeholder="Enter your Name" required autofocus/>
+                    <br /><br /> E-mail : <input type="email" name="email" placeholder="emailaddress@email.com" required autofocus/>
+                    <br /><br />Mobile Number : <input type="text" name="mobno" placeholder="(XXXXX XXXXX)" pattern="\d{5}.\d{5}" required />
+                    <br /><br />Telephone Number : <input type="text" name="telno" placeholder="(####) ###-###" pattern="\(\d{4}\).\d{3}.\d{3}" required/>
+                    <br /><br />Date of Birth : <input type="date" name="dob" required/>
+                    <br /><br />Gender : <input type="radio" name="gender" value="Male" required/>Male <input type="radio" name="gender" value="Female" required/>Female
+                    <br /><br />Nationality :
+                    <select type="text" name="Nationality">
+                    <optgroup label="Asian">
+                        <option value="Indian">Indian</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Sri Lankan">Sri Lankan</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Singaporean">Singaporean</option>
+                        <option value="Malaysian">Malaysian</option>
+                        <option value="Pakistani">Pakistani</option>
+                        <option value="Bangladeshi">Bangladeshi</option>
+                        <option value="Myanmarian">Myanmarian</option>
+                        <option value="Nepali">Nepali</option>
+                    </optgroup>
+                    <optgroup label="European">
+                        <option value="Spanish">Spanish</option>
+                        <option value="English">English</option>
+                        <option value="French">French</option>
+                        <option value="Denmarkian">Denmarkian</option>
+                        <option value="Dutch">Dutch</option>
+                    </optgroup>
+                    </select>
+                </fieldset>
+                <br /><br /><input type="submit" value="Submit" id="submitbutton"><input type="reset" value="Reset" id="resetbutton" />
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    function updateTextInput(val) {
+        document.getElementById('textInput').value = val;
+    }
+</script>
+
+</html>
+
+FormDisplayServlet.java
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author shamv
+ */
+public class FormDisplayServlet extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet FormDisplayServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Form Data Display</h1>");
+            out.println("<table border=\"1\">");
+            out.println("<tr>");
+            out.println("<td>Name :</td><td>"+request.getParameter("Name")+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>Email ID :</td><td>"+request.getParameter("email")+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>Mobile Number :</td><td>"+request.getParameter("mobno")+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>Telephone Number :</td><td>"+request.getParameter("telno")+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>Date of Birth :</td><td>"+request.getParameter("dob")+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>Gender :</td><td>"+request.getParameter("gender")+"</td>");
+            out.println("</tr>");
+            int selectedindex;
+            selectedindex = request.getParameterValues("Nationality").length;
+            String Nations=request.getParameter("Nationality");
+            out.println("<tr>");
+            out.println("<td>"
+                    + "Nationality</td>");
+            for(int i=0;i<selectedindex;i++){
+                out.println("<td>"+Nations+"</td>");
+                out.println("</tr>");
+            }
+            out.println("</table>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
+}

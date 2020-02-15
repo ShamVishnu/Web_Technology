@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Credit Card Form</title>
+</head>
+
+<style>
+    body {
+        font-family: cursive;
+    }
+    
+    input[type=text] {
+        padding: 10px;
+        width: 30%;
+    }
+    
+    input[type=number] {
+        width: 5%;
+        padding: 10px;
+    }
+    
+    input[type=submit] {
+        width: 14%;
+    }
+    
+    input[type=reset] {
+        width: 14%;
+    }
+    
+    #cardno {
+        padding: 30px;
+    }
+    
+    #name {
+        padding: 30px;
+    }
+    
+    #month {
+        padding: 10px;
+    }
+    
+    #year {
+        padding: 10px;
+    }
+    
+    #centercard {
+        text-align: center;
+    }
+    
+    #card {
+        width: 25%;
+        display: inline-block;
+        border: 2px solid black;
+        background-image: linear-gradient(white, yellow);
+        box-shadow: 5px 5px 5px 5px grey;
+    }
+</style>
+
+<body>
+    <div id="centercard">
+        <div id="card">
+            <p id="cardno">#### #### #### ####</p>
+            <p id="name"></p>
+            <span id="month">MM</span> / <span id="year">YY</span>
+        </div>
+        <form action="SubmitAction.html" method="POST" name="CreditCardForm">
+            <input type="text" placeholder="Enter your Credit Card Number" name="CardNo" required onkeyup="CreditCardValue()" /><br /><br />
+            <input type="text" placeholder="Enter the Name on the Card" name="Name" required onkeyup="NameValue()" /><br /><br /> Month:
+            <input type="number" placeholder="MM" pattern="\d{2}" name="Month" min="1" max="12" required onkeyup="MonthValue()" />&emsp;&nbsp;&nbsp; Year:
+            <input type="number" placeholder="YY" pattern="\d{2}" name="Year" min="20" max="26" required onkeyup="YearValue()" />&emsp;&emsp;&emsp;
+            <input type="number" placeholder="CVV" pattern="\d{3}" name="CVV" required min="000" max="999" /><br /><br />
+            <input type="submit" value="Submit" />&emsp;&emsp;&emsp;
+            <input type="reset" value="Reset" />
+        </form>
+    </div>
+</body>
+<script>
+    function CreditCardValue() {
+        var creditcardnumber = ;
+    }
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Types of Bullets</title>
+</head>
+
+<style>
+    .UpperRoman {
+        list-style-type: upper-roman;
+    }
+    
+    .UpperAlpha {
+        list-style-type: upper-alpha;
+    }
+    
+    .LowerRoman {
+        list-style-type: lower-roman;
+    }
+    
+    .LowerAlpha {
+        list-style-type: lower-alpha;
+    }
+</style>
+
+<body>
+    <ol class="UpperRoman">
+        <li>This is the Outermost Layer with Uppercase Roman Numerals</li>
+        <li>This is the Outermost Layer with Uppercase Roman Numerals</li>
+        <ol class="UpperAlpha">
+            <li>This is the Second Layer with Uppercase Alphabets</li>
+            <li>This is the Second Layer with Uppercase Alphabets</li>
+            <ol class="LowerRoman">
+                <li>This is the Third Layer with Lowercase Roman Numerals</li>
+                <li>This is the Third Layer with Lowercase Roman Numerals</li>
+                <ol class="LowerAlpha">
+                    <li>This is the Pen Ultimate Layer with Lowercase Alphabets</li>
+                    <li>This is the Pen Ultimate Layer with Lowercase Alphabets</li>
+                    <ol>
+                        <li>This is the Last Layer with Decimal Numbers</li>
+                        <li>This is the Last Layer with Decimal Numbers</li>
+                    </ol>
+                </ol>
+            </ol>
+        </ol>
+    </ol>
+</body>
+
+</html>

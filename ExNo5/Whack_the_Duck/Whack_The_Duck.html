@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Whack The Duck</title>
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    body {
+        cursor: url("imageedit_1_8175249771.gif"), url("imageedit_1_8175249771.cur"), default;
+        background-color: black;
+        color: yellow;
+        text-align: center;
+    }
+    
+    h1,
+    h3 {
+        font-family: 'Acme', sans-serif;
+    }
+    
+    p {
+        font-family: 'Dancing Script', cursive;
+        font-size: 200%;
+    }
+    
+    #score {
+        position: fixed;
+        right: 100px;
+        top: 0px;
+    }
+    
+    img {
+        padding: 100px;
+    }
+</style>
+
+<body onload="Timer()">
+    <h1>Whack the Duck</h1>
+    <h3 id="score">Ducks Killed : <span id="value"></span> </h3>
+    <img id="image0" src="./imageedit_10_7207486324.png" onclick="OnclickCount()" />
+    <img id="image1" src="./imageedit_10_7207486324.png" onclick="OnclickCount()" />
+    <img id="image2" src="./imageedit_10_7207486324.png" onclick="OnclickCount()" />
+</body>
+
+<script>
+    window.alert("Welcome to Whack the Duck Game");
+    var infinity = window.setInterval("DisplayDuck()", 500);
+
+    function Timer() {
+        var timer = window.setTimeout("GameOver()", 20000);
+    }
+
+    function DisplayDuck() {
+        var num = Math.floor(Math.random() * 3);
+        console.log(num);
+        var tagid = "image" + num;
+        console.log(tagid);
+        document.getElementById(tagid).style.visibility = "visible";
+        if (num == 0) {
+            document.getElementById("image1").style.visibility = "hidden";
+            document.getElementById("image2").style.visibility = "hidden";
+        } else if (num == 1) {
+            document.getElementById("image0").style.visibility = "hidden";
+            document.getElementById("image2").style.visibility = "hidden";
+        } else {
+            document.getElementById("image0").style.visibility = "hidden";
+            document.getElementById("image1").style.visibility = "hidden";
+        }
+    }
+    var count = 0;
+
+    function OnclickCount() {
+        count = count + 1;
+        document.getElementById("value").innerHTML = count;
+        document.getElementById("value").style.color = "blue";
+    }
+
+    function GameOver() {
+        window.alert("Game Over. Your Score is : " + count);
+        count = 0;
+        window.clearTimeout("timer");
+        var reply = window.confirm("Do you wish to Start Again");
+        if (reply == 1) {
+            Timer();
+        } else {
+            close();
+        }
+    }
+
+    var elms = document.getElementsByTagName("*");
+    var n = elms.length;
+    for (var i = 0; i < n; i++) {
+        if (window.getComputedStyle(elms[i]).cursor == "pointer") {
+            elms[i].style.cursor = "url(imageedit_1_8175249771.cur)";
+        }
+    }
+</script>
+
+</html>

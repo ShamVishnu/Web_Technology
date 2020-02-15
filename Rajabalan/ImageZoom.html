@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Zoom Javascript</title>
+</head>
+<style>
+    #imgdisplay{
+        visibility: hidden;
+    }
+</style>
+<body>
+    <img src="./photography-of-person-walking-on-road-1236701.jpg" height="500" width="250" onmouseover="DisplayPicture()" onmouseout="ClearAttribute()">
+    <img id="imgdisplay" src="./photography-of-person-walking-on-road-1236701.jpg" height="1000" width="500"></img>
+</body>
+<script>
+    function DisplayPicture(){
+        document.getElementById("imgdisplay").style.visibility="visible";
+    }
+    function ClearAttribute(){
+        document.getElementById("imgdisplay").style.visibility="hidden";
+    }
+</script>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mad Lib Story Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    h1 {
+        font-family: 'Acme', sans-serif;
+    }
+    
+    p {
+        font-family: 'Dancing Script', cursive;
+        font-size: 200%;
+    }
+    
+    span {
+        font-family: 'Dancing Script', cursive;
+        font-size: 150%;
+    }
+</style>
+
+<body id="bodystyle">
+    <h1>Welcome to Mad Lib Story</h1>
+    <p>Choices : </p>
+    <p id="Choices"></p>
+    <span id="c0"></span>
+    <span id="c1"></span>
+    <span id="c2"></span>
+    <span id="c3"></span>
+    <span id="c4"></span>
+    <span id="c5"></span>
+    <span id="c6"></span>
+    <span id="c7"></span>
+    <span id="c8"></span>
+    <span id="c9"></span>
+    <p>An old man lived in the <span id="firstblank" onclick="firstblank()">________</span> .He was one of the most <span id="secondblank" onclick="secondblank()">________</span> people in the world. The whole village was tired of him; he was always
+        <span id="thirdblank" onclick="thirdblank()">________</span> , he constantly complained and was always in a bad mood. The longer he lived, the more bile he was becoming and the more <span id="fourthblank" onclick="fourthblank()">________</span>        were his words. People avoided him, because his misfortune became <span id="fifthblank" onclick="fifthblank()">________</span> . It was even unnatural and <span id="sixthblank" onclick="sixthblank()">________</span> to be happy next to him. He
+        created the feeling of
+        <span id="seventhblank" onclick="seventhblank()">________</span> in others. But one day, when he turned <span id="eighthblank" onclick="eighthblank()">________</span> years old, an <span id="ninthblank" onclick="ninthblank()">________</span> thing
+        happened. Instantly everyone started hearing the rumour: “An Old Man is happy today, he doesn’t complain about anything, smiles, and even his face is freshened up.” The whole village gathered together. The old man was asked: Villager: What happened
+        to you? “Nothing special. Eighty years I’ve been chasing <span id="tenthblank" onclick="tenthblank()">________</span> , and it was useless. And then I decided to live without happiness and just enjoy life. That’s why I’m happy now.” – An Old Man</p>
+</body>
+<script>
+    window.alert("Welcome to Mad Lib Story");
+    document.getElementById("bodystyle").style.backgroundColor = "black";
+    document.getElementById("bodystyle").style.color = "white";
+    var words = new Array("Eighty", "Unfortunate", "Village", "Gloomy", "Incredible", "Unhappiness", "Insulting", "Happiness", "Poisonous", "Contagious");
+    for (i = 0; i < 10; i++) {
+        var tagid = "c" + i;
+        console.log(tagid);
+        document.getElementById(tagid).innerHTML = words[i];
+    }
+
+    function firstblank() {
+        var firword = "Village";
+        var firstblankword = window.prompt("Enter the Word for the First Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("firstblank").innerHTML = firstblankword;
+            document.getElementById("firstblank").style.color = "green";
+            document.getElementById('c2').style.color = "black";
+        } else {
+            document.getElementById("firstblank").innerHTML = firstblankword;
+            document.getElementById("firstblank").style.color = "red";
+            document.getElementById('c2').style.color = "white";
+        }
+    }
+
+    function secondblank() {
+        var firword = "unfortunate";
+        var firstblankword = window.prompt("Enter the Word for the Second Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("secondblank").innerHTML = firstblankword;
+            document.getElementById("secondblank").style.color = "green";
+            document.getElementById('c1').style.color = "black";
+        } else {
+            document.getElementById("secondblank").innerHTML = firstblankword;
+            document.getElementById("secondblank").style.color = "red";
+            document.getElementById('c1').style.color = "white";
+        }
+    }
+
+    function thirdblank() {
+        var firword = "gloomy";
+        var firstblankword = window.prompt("Enter the Word for the Third Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("thirdblank").innerHTML = firstblankword;
+            document.getElementById("thirdblank").style.color = "green";
+            document.getElementById('c3').style.color = "black";
+        } else {
+            document.getElementById("thirdblank").innerHTML = firstblankword;
+            document.getElementById("thirdblank").style.color = "red";
+            document.getElementById('c3').style.color = "white";
+        }
+    }
+
+    function fourthblank() {
+        var firword = "poisonous";
+        var firstblankword = window.prompt("Enter the Word for the Fourth Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("fourthblank").innerHTML = firstblankword;
+            document.getElementById("fourthblank").style.color = "green";
+            document.getElementById('c8').style.color = "black";
+        } else {
+            document.getElementById("fourthblank").innerHTML = firstblankword;
+            document.getElementById("fourthblank").style.color = "red";
+            document.getElementById('c8').style.color = "white";
+        }
+    }
+
+    function fifthblank() {
+        var firword = "contagious";
+        var firstblankword = window.prompt("Enter the Word for the Fifth Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("fifthblank").innerHTML = firstblankword;
+            document.getElementById("fifthblank").style.color = "green";
+            document.getElementById('c9').style.color = "black";
+        } else {
+            document.getElementById("fifthblank").innerHTML = firstblankword;
+            document.getElementById("fifthblank").style.color = "red";
+            document.getElementById('c9').style.color = "white";
+        }
+    }
+
+    function sixthblank() {
+        var firword = "insulting";
+        var firstblankword = window.prompt("Enter the Word for the Sixth Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("sixthblank").innerHTML = firstblankword;
+            document.getElementById("sixthblank").style.color = "green";
+            document.getElementById('c6').style.color = "black";
+        } else {
+            document.getElementById("sixthblank").innerHTML = firstblankword;
+            document.getElementById("sixthblank").style.color = "red";
+            document.getElementById('c6').style.color = "white";
+        }
+    }
+
+    function seventhblank() {
+        var firword = "unhappiness";
+        var firstblankword = window.prompt("Enter the Word for the Seventh Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("seventhblank").innerHTML = firstblankword;
+            document.getElementById("seventhblank").style.color = "green";
+            document.getElementById('c5').style.color = "black";
+        } else {
+            document.getElementById("seventhblank").innerHTML = firstblankword;
+            document.getElementById("seventhblank").style.color = "red";
+            document.getElementById('c5').style.color = "white";
+        }
+    }
+
+    function eighthblank() {
+        var firword = "eighty";
+        var firstblankword = window.prompt("Enter the Word for the Eighth Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("eighthblank").innerHTML = firstblankword;
+            document.getElementById("eighthblank").style.color = "green";
+            document.getElementById('c0').style.color = "black";
+        } else {
+            document.getElementById("eighthblank").innerHTML = firstblankword;
+            document.getElementById("eighthblank").style.color = "red";
+            document.getElementById('c0').style.color = "white";
+        }
+    }
+
+    function ninthblank() {
+        var firword = "incredible";
+        var firstblankword = window.prompt("Enter the Word for the Ninth Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("ninthblank").innerHTML = firstblankword;
+            document.getElementById("ninthblank").style.color = "green";
+            document.getElementById('c4').style.color = "black";
+        } else {
+            document.getElementById("ninthblank").innerHTML = firstblankword;
+            document.getElementById("ninthblank").style.color = "red";
+            document.getElementById('c4').style.color = "white";
+        }
+    }
+
+    function tenthblank() {
+        var firword = "happiness";
+        var firstblankword = window.prompt("Enter the Word for the Tenth Blank:");
+        if (firstblankword.toUpperCase() == firword.toUpperCase()) {
+            document.getElementById("tenthblank").innerHTML = firstblankword;
+            document.getElementById("tenthblank").style.color = "green";
+            document.getElementById('c7').style.color = "black";
+        } else {
+            document.getElementById("tenthblank").innerHTML = firstblankword;
+            document.getElementById("tenthblank").style.color = "red";
+            document.getElementById('c7').style.color = "white";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dynamic Table</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+    
+    button {
+        width: 96px;
+        height: 48px;
+        font-size: 24px;
+        margin: 20px;
+    }
+    
+    #add {
+        background-color: royalblue;
+    }
+    
+    #delete {
+        background-color: red;
+    }
+    
+    table {
+        border: 5;
+    }
+    
+    tr {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        font-size: 25px;
+    }
+    
+    td {
+        background-color: blue;
+        color: black;
+        padding: 20px;
+        margin: 20px;
+    }
+</style>
+
+<body>
+    <h1>Add / Delete Table Rows Dynamically</h1>
+    <button id="add" onclick="addTableRow()">Add</button>
+    <button id="delete" onclick="deleteTableRow()">Delete</button>
+
+</body>
+<script>
+    var table = document.createElement("table");
+    var body = document.getElementsByTagName("body")[0];
+    var row, cell, prevrow;
+    body.appendChild(table);
+    document.getElementsByTagName("table")[0].setAttribute("border", 1);
+    var count = -1;
+
+    function addTableRow() {
+        count = count + 1;
+        row = document.createElement("tr");
+        table.appendChild(row);
+        row.innerHTML = "Row : " + count;
+        cell = document.createElement("td");
+        row.appendChild(cell);
+        var data = window.prompt("Enter the Data for New Cell :");
+        cell.innerHTML = data;
+        console.log("Row Inserted at last");
+    }
+
+    function deleteTableRow() {
+        if (count < 0) {
+            window.alert("No Rows to delete");
+            console.log("No Rows available to be Deleted");
+        } else {
+            table.deleteRow(Number(count));
+            count = count - 1;
+            console.log("Row Deleted");
+        }
+    }
+</script>
+
+</html>

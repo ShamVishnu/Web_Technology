@@ -1,0 +1,330 @@
+----------------------------------------------------------------------------------------------
+Name : ShamVishnu K
+Class : B.Tech (IT)
+Ex No : 3
+Ex Name : Cascading Style Sheets
+----------------------------------------------------------------------------------------------
+Script started on Fri 03 Jan 2020 11:29:39 AM IST
+[17bit049@mepcolinux ExNo3]$cd 3.2
+[17bit049@mepcolinux 3.2]$ls
+a  b
+[17bit049@mepcolinux 3.2]$cd a
+[17bit049@mepcolinux a]$cd i
+[17bit049@mepcolinux i]$ls
+Non_Persistant_and_Preferred.css  Non_Persistant_and_Preferred.html
+[17bit049@mepcolinux i]$cat Non_Persistant_and_Preferred.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Non Persistant and Preferred Style Sheets </title>
+    <link rel="stylesheet" href="./Non Persistant and Preferred.css" title="Preferred Style Sheets">
+</head>
+<body>
+    <p>This uses an Non Persistant and Prefered Style Sheet</p>
+</body>
+</html>
+[17bit049@mepcolinux i]$cat Non_Persistant_and_Preferred.css
+body {
+    background-color: black;
+    color: white;
+}
+[17bit049@mepcolinux i]$cd ..
+[17bit049@mepcolinux a]$cd ii
+[17bit049@mepcolinux ii]$ls
+alternate1.css	alternate.css  Alternating_Style_Sheets.html  default.css  reset.css
+[17bit049@mepcolinux ii]$cat Alternating_Style_Sheets.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<link href="default.css" rel="stylesheet" type="text/css" title="Default Style" />-->
+    <link href="alternate.css" rel="alternate stylesheet" type="text/css" title="Fancy" />
+    <link href="alternate1.css" rel="alternate stylesheet" type="text/css" title="Basic" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alternate Style Sheets</title>
+</head>
+<body>
+    <h1>Hi</h1>
+</body>
+</html>
+[17bit049@mepcolinux ii]$cat default.css 
+body {
+    background-color: black;
+    color: red;
+}
+[17bit049@mepcolinux ii]$cat alternate.ccss
+body {
+    background-color: black;
+    color: blue;
+}
+[17bit049@mepcolinux ii]$cat alternate1.css
+body {
+    background-color: black;
+    color: green;
+}
+[17bit049@mepcolinux ii]$cd ..
+[17bit049@mepcolinux a]$cd iii
+[17bit049@mepcolinux iii]$ls
+print.css  Printing_HTML.html
+[17bit049@mepcolinux iii]$cat Printing_HTML.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<link href="default.css" rel="stylesheet" type="text/css" title="Default Style" />-->
+    <link href="print.css" rel="stylesheet" type="text/css" title="Fancy" media="print" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alternate Style Sheets</title>
+</head>
+<body>
+    <h1>Hi</h1>
+</body>
+</html>
+[17bit049@mepcolinux iii]$cat print.css 
+@media print {
+    body {
+        color: blue;
+    }
+}
+[17bit049@mepcolinux iii]$cd ..
+[17bit049@mepcolinux a]$cd ..
+[17bit049@mepcolinux 3.2]$cd b
+[17bit049@mepcolinux b]$ls
+ImportCSS_1.css  ImportCSS.css	Importing_Base_HTML.html
+[17bit049@mepcolinux b]$cat Importing_Base_HTML.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Importing Base HTML Page</title>
+</head>
+<style>
+    @import "ImportCSS.css";
+</style>
+<body>
+    <h1>Hello</h1>
+    <p>This is the p tag</p>
+</body>
+</html>
+[17bit049@mepcolinux b]$cat ImportCSS.css
+@import "ImportCSS_1.css";
+h1 {
+    color: black;
+}
+[17bit049@mepcolinux b]$cat ImportCSS_1.css
+p {
+    color: red;
+}
+[17bit049@mepcolinux b]$cd ..
+[17bit049@mepcolinux 3.2]$cd ..
+[17bit049@mepcolinux ExNo3]$cd 3.10
+[17bit049@mepcolinux 3.10]$ls
+Staircase.html
+[17bit049@mepcolinux 3.10]$cat Staircase.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+    .step {
+        width: 50%;
+        height: 20px;
+        border: solid;
+    }
+    .step:nth-child(4) {
+        height: 100px;
+        margin-left: 10%;
+        width: 40%;
+    }
+    .step:nth-child(3) {
+        height: 100px;
+        margin-left: 20%;
+        width: 30%;
+    }
+    .step:nth-child(2) {
+        height: 100px;
+        margin-left: 30%;
+        width: 20%;
+    }
+    .step:nth-child(1) {
+        height: 100px;
+        margin-left: 40%;
+        width: 10%;
+    }
+</style>
+<body>
+    <div class="step">The Summit</div>
+    <div class="step">Closer than Ever</div>
+    <div class="step">Two Steps ahead</div>
+    <div class="step">Your First Step is a Success</div>
+</body>
+</html>
+[17bit049@mepcolinux 3.10]$cd ..
+[17bit049@mepcolinux ExNo3]$cd 3.20
+[17bit049@mepcolinux 3.20]$ls
+List_Bullets.html
+[17bit049@mepcolinux 3.20]$cat List_Bullets.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Types of Bullets</title>
+</head>
+<style>
+    .UpperRoman {
+        list-style-type: upper-roman;
+    }
+    .UpperAlpha {
+        list-style-type: upper-alpha;
+    }
+    .LowerRoman {
+        list-style-type: lower-roman;
+    }
+    .LowerAlpha {
+        list-style-type: lower-alpha;
+    }
+</style>
+<body>
+    <ol class="UpperRoman">
+        <li>This is the Outermost Layer with Uppercase Roman Numerals</li>
+        <li>This is the Outermost Layer with Uppercase Roman Numerals</li>
+        <ol class="UpperAlpha">
+            <li>This is the Second Layer with Uppercase Alphabets</li>
+            <li>This is the Second Layer with Uppercase Alphabets</li>
+            <ol class="LowerRoman">
+                <li>This is the Third Layer with Lowercase Roman Numerals</li>
+                <li>This is the Third Layer with Lowercase Roman Numerals</li>
+                <ol class="LowerAlpha">
+                    <li>This is the Pen Ultimate Layer with Lowercase Alphabets</li>
+                    <li>This is the Pen Ultimate Layer with Lowercase Alphabets</li>
+                    <ol>
+                        <li>This is the Last Layer with Decimal Numbers</li>
+                        <li>This is the Last Layer with Decimal Numbers</li>
+                    </ol>
+                </ol>
+            </ol>
+        </ol>
+    </ol>
+</body>
+</html>
+[17bit049@mepcolinux 3.20]$cd ..
+[17bit049@mepcolinux ExNo3]$cd 3.26
+[17bit049@mepcolinux 3.26]$ls
+a  b  c
+[17bit049@mepcolinux 3.26]$cd a
+[17bit049@mepcolinux a]$ls
+Seashell_BGColor_1.html  Seashell_BGColor_2.html  Seashell_BGColor.html  Seashell.css
+[17bit049@mepcolinux a]$cat Seashell_BGColor.htm;l
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./Seashell.css" title="Seashell">
+    <title>Seashell Background Color</title>
+</head>
+<body>
+</body>
+</html>
+[17bit049@mepcolinux a]$cat Seashell_BGColor_1.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./Seashell.css" title="Seashell">
+    <title>Seashell Background Color 1</title>
+</head>
+<body>
+</body>
+</html>
+[17bit049@mepcolinux a]$cat Seashell_BGColor_2.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./Seashell.css" title="Seashell">
+    <title>Seashell Background Color 2</title>
+</head>
+<body>
+</body>
+</html>
+[17bit049@mepcolinux a]$cat Seashell.css
+body {
+    background-color: seashell;
+}
+[17bit049@mepcolinux a]$cd ..
+[17bit049@mepcolinux 3.26]$cd b
+[17bit049@mepcolinux b]$ls
+List_Types_of_Bullets.html
+[17bit049@mepcolinux b]$cat List_Types_of_Bullets.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Types of Bullets</title>
+</head>
+<style>
+    .Outer {
+        list-style-type: upper-roman;
+    }
+    .Inner {
+        list-style-type: upper-alpha;
+    }
+</style>
+<body>
+    <ol class="Outer">
+        <li><a href="https://en.wikipedia.org/wiki/Lionel_Messi ">Lionel Messi</a>
+        </li>
+        <ol class="Inner">
+            <li><a href="https://en.wikipedia.org/wiki/FC_Barcelona ">FC Barcelona</a></li>
+        </ol>
+    </ol>
+</body>
+</html>
+[17bit049@mepcolinux b]$cd ..
+[17bit049@mepcolinux 3.26]$cd c
+[17bit049@mepcolinux c]$ls
+Alternate_Pseudo_Class.html
+[17bit049@mepcolinux c]$cat Alternate_Pseudo_Class.html 
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p:nth-child(2n) i {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+</body>
+</html>
+[17bit049@mepcolinux WebTechnology]$exit
+exit
+Script done on Fri 03 Jan 2020 11:34:22 AM IST

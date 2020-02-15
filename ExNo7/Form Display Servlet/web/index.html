@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Forms</title>
+    <h1 style="text-align: center;">Google Forms</h1>
+</head>
+
+<style>
+    fieldset {
+        border-color: black;
+        font-family: sans-serif
+    }
+    
+    body {
+        background-color: black;
+        text-align: left;
+        color: white;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    #Form {
+        display: inline-block;
+        width: 75%;
+        border-radius: 5px;
+        text-align: justify;
+        background-color: skyblue;
+        color: black;
+    }
+    
+    .cc {
+        width: 30px;
+    }
+    
+    .redstar {
+        color: red;
+    }
+    
+    #header {
+        text-align: center;
+    }
+    
+    #submitbutton {
+        padding: 20px;
+        width: 50%;
+        background-color: green;
+    }
+    
+    #submitbutton:hover {
+        background-color: darkgreen;
+    }
+    
+    #resetbutton {
+        padding: 20px;
+        width: 50%;
+        background-color: red;
+    }
+    
+    #resetbutton:hover {
+        background-color: darkred;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <h1>Enter your Personal Details</h1>
+        <p>Please fill out all the fields marked with <span class="redstar">*</span></p>
+    </div>
+    <div class="container">
+        <div id="Form">
+            <form action="FormDisplayServlet" method="post">
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    Name : <input type="text" name="Name" placeholder="Enter your Name" required autofocus/>
+                    <br /><br /> E-mail : <input type="email" name="email" placeholder="emailaddress@email.com" required autofocus/>
+                    <br /><br />Mobile Number : <input type="text" name="mobno" placeholder="(XXXXX XXXXX)" pattern="\d{5}.\d{5}" required />
+                    <br /><br />Telephone Number : <input type="text" name="telno" placeholder="(####) ###-###" pattern="\(\d{4}\).\d{3}.\d{3}" required/>
+                    <br /><br />Date of Birth : <input type="date" name="dob" required/>
+                    <br /><br />Gender : <input type="radio" name="gender" value="Male" required/>Male <input type="radio" name="gender" value="Female" required/>Female
+                    <br /><br />Nationality :
+                    <select type="text" name="Nationality">
+                    <optgroup label="Asian">
+                        <option value="Indian">Indian</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Sri Lankan">Sri Lankan</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Singaporean">Singaporean</option>
+                        <option value="Malaysian">Malaysian</option>
+                        <option value="Pakistani">Pakistani</option>
+                        <option value="Bangladeshi">Bangladeshi</option>
+                        <option value="Myanmarian">Myanmarian</option>
+                        <option value="Nepali">Nepali</option>
+                    </optgroup>
+                    <optgroup label="European">
+                        <option value="Spanish">Spanish</option>
+                        <option value="English">English</option>
+                        <option value="French">French</option>
+                        <option value="Denmarkian">Denmarkian</option>
+                        <option value="Dutch">Dutch</option>
+                    </optgroup>
+                    </select>
+                </fieldset>
+                <br /><br /><input type="submit" value="Submit" id="submitbutton"><input type="reset" value="Reset" id="resetbutton" />
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    function updateTextInput(val) {
+        document.getElementById('textInput').value = val;
+    }
+</script>
+
+</html>

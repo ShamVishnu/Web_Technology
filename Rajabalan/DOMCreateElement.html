@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Add / Delete Paragraph Dynamically</h1>
+    <button id="add" onclick="addParagraph()">Add</button>
+    <button id="delete" onclick="deleteParagraph()">Delete</button>
+    <button id="addlist" onclick="addListItem()">Add List Items</button>
+    <button id="deletelist" onclick="deleteListItem()">Delete List Items</button>
+</body>
+
+<script>
+    var p = document.createElement("p");
+    var body = document.getElementsByTagName("body")[0];
+    var count = -1;
+    var list = document.createElement("ul");
+    body.append(list);
+
+    function addParagraph() {
+        count = count + 1;
+        p = document.createElement("p");
+        body.append(p);
+        var data = window.prompt("Enter the Data for New Paragraph :");
+        p.innerHTML = data;
+        console.log("Row Inserted at last");
+    }
+
+    function deleteParagraph() {
+        if (count < 0) {
+            window.alert("No Paragraphs to delete");
+            console.log("No Paragraphs available to be Deleted");
+        } else {
+            child = body.lastChild;
+            body.removeChild(child);
+            count = count - 1;
+            console.log("Paragraph Deleted");
+        }
+    }
+
+    function addListItem() {
+        count = count + 1;
+        listelement = document.createElement("li");
+        list.append(listelement);
+        var data = window.prompt("Enter the Data for New ListItem :");
+        listelement.innerHTML = data;
+        console.log("Row Inserted at last");
+    }
+
+    function deleteListItem() {
+        if (count < 0) {
+            window.alert("No ListItems to delete");
+            console.log("No ListItems available to be Deleted");
+        } else {
+            child = list.lastChild;
+            list.removeChild(child);
+            count = count - 1;
+            console.log("Paragraph Deleted");
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,122 @@
+-----------------------------------------------------------------------------
+15IT653 Web Technology
+Ex No 8 : Java Server Pages and JSP Standard Tag Library
+Ex Date : 14/02/20
+Roll No : 17BIT049
+Entry Date : 14/02/20
+Entry Mark : 9
+Output Date : 14/02/20
+Output Mark :
+Record Date : 14/02/20
+Record Mark :
+-----------------------------------------------------------------------------
+Max Age
+<%-- 
+    Document   : MaxAgeResult
+    Created on : 13 Feb, 2020, 10:23:49 PM
+    Author     : shamv
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <%
+            String numbers[]=(request.getParameter("ages")).split(",");
+            int numarray[]={0,0,0,0,0,0,0,0,0,0,0};
+            for(int i=0;i<10;i++){
+                numarray[i]=Integer.parseInt(numbers[i]);
+            }
+            int max=numarray[0];
+            for(int j=0;j<10;j++){
+                if(numarray[j]>max){
+                    max=numarray[j];
+                }
+            }
+            out.println("<h1>Maximum Age of the Group is : </h1><h3>"+max+"</h3>");
+        %>
+    </body>
+</html>
+
+Calculator
+<%-- 
+    Document   : Calculator.jsp
+    Created on : 13 Feb, 2020, 10:53:09 PM
+    Author     : shamv
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Calculator Result</h1>
+        <%
+        int flag=0;
+        String Num1=request.getParameter("First_Number");
+        String Num2=request.getParameter("Second_Number");
+        String Operation=request.getParameter("Operator");
+        int num1=Integer.parseInt(Num1);
+        int num2=Integer.parseInt(Num2);
+        int operationval=Integer.parseInt(Operation);
+        int Result=0;
+        switch (operationval){
+        case 1:
+            Result=num1+num2;
+            break;
+        case 2:
+            Result=num1-num2;
+            break;
+        case 3:
+            Result=num1*num2;
+            break;
+        case 4:
+            Result=num1/num2;
+            break;
+        case 5:
+            Result=num1%num2;
+            break;
+        default:
+            flag=1;
+            out.println("Illegal Operation");
+        }
+        if(flag==0){
+            out.println("<h1>The Result is : </h1><h3>"+Result+"</h3>");
+        }
+        else{
+            out.println("<h1>Enter a Valid Operator");
+        }
+        %>
+    </body>
+</html>
+
+Expression Language
+<%-- 
+    Document   : ExpressionLanguage
+    Created on : 14 Feb, 2020, 11:03:17 AM
+    Author     : shamv
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Welcome to Expression Language</h1>
+        <c:set var="SomeValue" value="${param.box}"></c:set>
+        <c:if test="${(SomeValue>=1) && (SomeValue<=5)}">
+            <p>The Value is Correct</p>
+        </c:if>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+body {
+    font-family: cursive;
+    background-color: black;
+    color: white;
+}
+
+#start {
+    position: relative;
+    left: 120px;
+    top: 120px;
+    width: 100px;
+    height: 150px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 2px 2px 0 yellow;
+}

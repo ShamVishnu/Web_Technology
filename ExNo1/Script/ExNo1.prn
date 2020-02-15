@@ -1,0 +1,169 @@
+----------------------------------------------------------------------------------------------
+Name : ShamVishnu K
+Class : B.Tech (IT)
+Ex No : 1
+Ex Name : Framesets and Table
+----------------------------------------------------------------------------------------------
+Resume Frameset.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RESUME : FRAMESET</title>
+</head>
+
+<frameset cols="15%,85%" name="Frame">
+    <frame src="Leftpane.html" name="LeftPane"></frame>
+    <frameset rows="20%,80%">
+        <frame src="Header.html" name="Header"></frame>
+        <frame src="Content.html" name="Content"></frame>
+    </frameset>
+    <frame src="RightPane.html" name="RightPane"></frame>
+</frameset>
+
+</html>
+
+ Header.html
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Header</title>
+</head>
+
+<style>
+    body {
+        background-image: radial-gradient(royalblue, black);
+    }
+    
+    h1 {
+        text-align: center;
+        padding: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    h4 {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>
+
+<body>
+    <h1>
+        Welcome to My Website
+    </h1>
+    <h4>Don't be the second someone , Be the first you</h4>
+</body>
+
+</html>
+
+ LeftPane.html
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Navbar</title>
+</head>
+
+<style>
+    a {
+        background-color: black;
+        color: royalblue;
+        text-decoration: none;
+        padding: 5px;
+        text-align: center;
+        box-shadow: 1px 0px 1px 1px royalblue;
+    }
+</style>
+
+<body>
+    <a href="Resume Frameset.html" target="Frame">Home</a><br /><br />
+    <a href="PersonalDetails.html" target="Content">Personal Details</a><br /><br />
+    <a href="EducationalDetails.html" target="Content">Educational Details</a><br /><br />
+    <a href="CompetitionsAttended.html" target="Content">Competitions and Workshops</a><br /><br />
+    <a href="PositionsofResponsibility.html" target="Content">Positions of Responsibility</a><br /><br />
+    <a href="Skills.html" target="Content">Skills</a>
+</body>
+
+</html>
+
+Table
+
+Table.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table</title>
+</head>
+
+<body>
+    <table border="2">
+        <tr>
+            <th colspan="6">VI Semester Timetable</th>
+        </tr>
+        <tr>
+            <td style="border:none;"></td>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <th>1:00</th>
+            <td rowspan="2" bgcolor="orange">Office</td>
+            <td style="border:none;"></td>
+            <td rowspan="2" bgcolor="orange">Office</td>
+            <td rowspan="8" bgcolor="orange">Office hours by Appt</td>
+            <td rowspan="2" bgcolor="orange">Office</td>
+        </tr>
+        <tr>
+            <th>1:30</th>
+            <td rowspan="2" bgcolor="blue">Dept Meeting</td>
+        </tr>
+        <tr>
+            <th>2:00</th>
+            <td rowspan="3" bgcolor="yellow">MAT 108</td>
+            <td rowspan="3" bgcolor="yellow">MAT 108</td>
+            <td rowspan="3" bgcolor="yellow">MAT 108</td>
+        </tr>
+        <tr>
+            <th>2:30</th>
+            <td style="border:none;"></td>
+        </tr>
+        <tr>
+            <th>3:00</th>
+            <td rowspan="3" bgcolor="red">ECE Meeting</td>
+        </tr>
+        <tr>
+            <th>3:30</th>
+            <td rowspan="3" bgcolor="green">CSC 205</td>
+            <td rowspan="3" bgcolor="green">CSC 205</td>
+            <td rowspan="3" bgcolor="green">CSC 205</td>
+        </tr>
+        <tr>
+            <th>4:00</th>
+        </tr>
+        <tr>
+            <th>4:30</th>
+            <td style="border:none;"></td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

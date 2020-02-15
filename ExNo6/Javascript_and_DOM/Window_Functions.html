@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Window Functions</title>
+</head>
+
+<body>
+    <h1>Window Functions</h1>
+    <p>1 >> New Tab</p>
+    <p>2 >> Resize Tab</p>
+    <p>3 >> Pop Up Window</p>
+    <p>4 >> Move Tab</p>
+    <p>5 >> Close Window</p>
+    <button onclick="Tryit()">Wanna have a try???</button>
+</body>
+<script>
+    function Tryit() {
+        var choice = window.prompt("Enter the Choice:");
+        switch (choice) {
+            case "1":
+                window.open("https://www.google.com");
+                break;
+            case "2":
+                window.resizeBy(2, 2);
+                break;
+            case "3":
+                var popup = window.open("./Dynamic_Table.html", "popup", "width=500,height=500");
+                popup.moveBy(10, 10);
+                popup.resizeBy(2, 2);
+                popup.focus();
+                break;
+            case "4":
+                window.moveBy(10, 10);
+                break;
+            case "5":
+                window.close();
+                break;
+        }
+    }
+</script>
+
+</html>
